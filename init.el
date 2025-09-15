@@ -2,7 +2,7 @@
 ;; Smart Emacs Setup (init.el)
 ;; ===============================
 
-Basic environment setup
+;; Basic environment setup
 (setq inhibit-startup-message t
       visible-bell t
       tab-width 4
@@ -27,7 +27,7 @@ Basic environment setup
 (global-set-key "\eOn" ".")
 (global-set-key (kbd "C-M-r") 'recentf-open-files)
 
-Compilation helpers
+;; Compilation helpers
 (defun cplusplus-compile-command (comm)
   (make-local-variable 'compile-command)
   (if (or (file-exists-p "makefile")
@@ -48,16 +48,16 @@ Compilation helpers
   (make-local-variable 'compile-command)
   (setq compile-command (concat "php -l " (file-name-nondirectory buffer-file-truename))))
 
-;; ;; Package setup
-;; (require 'package)
-;; (setq package-archives
-;;       '(("gnu"          . "https://elpa.gnu.org/packages/")
-;;         ("gnu-devel"    . "https://elpa.gnu.org/devel/")
-;;         ("nongnu"       . "https://elpa.nongnu.org/nongnu/")
-;;         ("melpa"        . "https://melpa.org/packages/")
-;;         ("melpa-stable" . "https://stable.melpa.org/packages/")
-;;         ("elpy"         . "http://jorgenschaefer.github.io/packages/")))
-;; (package-initialize)
+;; Package setup
+(require 'package)
+(setq package-archives
+      '(("gnu"          . "https://elpa.gnu.org/packages/")
+        ("gnu-devel"    . "https://elpa.gnu.org/devel/")
+        ("nongnu"       . "https://elpa.nongnu.org/nongnu/")
+        ("melpa"        . "https://melpa.org/packages/")
+        ("melpa-stable" . "https://stable.melpa.org/packages/")
+        ("elpy"         . "http://jorgenschaefer.github.io/packages/")))
+(package-initialize)
 
 (require 'use-package)
 (setq use-package-always-ensure t)
@@ -113,7 +113,6 @@ Compilation helpers
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 (require 'cpp-auto-include)
 
-
 (add-hook 'c++-mode-hook (lambda () (cplusplus-compile-command "g++")))
 (add-hook 'c-mode-hook  (lambda () (cplusplus-compile-command "gcc")))
 (add-hook 'asm-mode-hook (lambda () (cplusplus-compile-command "gcc")))
@@ -123,7 +122,7 @@ Compilation helpers
 ;; Detect .h files correctly
 (defun c-c++-header ()
   (interactive)
-  (let ((c-file (concat (substring (buffer-file-name) 0 -1) "c"))))
+  (let ((c-file (concat (substring (buffer-file-name) 0 -1) "c")))
     (if (file-exists-p c-file)
         (c-mode)
       (c++-mode))))
