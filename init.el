@@ -118,14 +118,6 @@
 (add-hook 'java-mode-hook 'java-compile-command)
 (add-hook 'php-mode-hook 'php-compile-command)
 
-;; Detect .h files correctly
-(defun c-c++-header ()
-  (interactive)
-  (let ((c-file (concat (substring (buffer-file-name) 0 -1) "c"))))
-    (if (file-exists-p c-file)
-        (c-mode)
-      (c++-mode))))
-
 ;; Custom C style
 (defun my-c-style ()
   "Load custom C style."
