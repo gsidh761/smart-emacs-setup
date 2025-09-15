@@ -1,4 +1,4 @@
-# Smart Emacs Setup  
+# Smart Emacs  
 ### One-command install for auto-completion, header insertion, and productivity tweaks.  
 
 **Quick Start:**  
