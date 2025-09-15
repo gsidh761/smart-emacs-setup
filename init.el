@@ -122,8 +122,9 @@
 (defun c-c++-header ()
   (interactive)
   (let ((c-file (concat (substring (buffer-file-name) 0 -1) "c"))))
-    (if (file-exists-p c-file) (c-mode) (c++-mode))))
-(add-to-list 'auto-mode-alist '("\\.h\\'" . c-c++-header))
+    (if (file-exists-p c-file)
+        (c-mode)
+      (c++-mode))))
 
 ;; Custom C style
 (defun my-c-style ()
