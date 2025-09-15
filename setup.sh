@@ -9,5 +9,15 @@ wget https://raw.githubusercontent.com/gsidh761/smart-emacs-setup/refs/heads/mai
 echo "Copying new init.el file to ~/.emacs.d/..."
 cp init.el ~/.emacs.d/ 
 rm init.el
+echo "Installing Packages..."
+emacs --batch --eval "
+(require 'package)
+(add-to-list 'package-archives '(\"melpa\" . \"https://melpa.org/packages/\") t)
+(package-initialize)
+(unless package-archive-contents
+  (package-refresh-contents))
+(package-install 'company)
+(package-install 'cpp-auto-include)
+"
 echo "Done..."
 
