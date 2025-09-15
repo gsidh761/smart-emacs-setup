@@ -2,8 +2,7 @@
 ### One-command install for auto-completion, header insertion, and productivity tweaks.  
 
 **Quick Start:**  
-```bash
-wget https://raw.githubusercontent.com/gsidh761/smart-emacs-setup/refs/heads/main/setup.sh && chmod +x setup.sh && ./setup.sh```
+```wget https://raw.githubusercontent.com/gsidh761/smart-emacs-setup/refs/heads/main/setup.sh && chmod +x setup.sh && ./setup.sh```
 
 **Current Issues**
 1. Auto header insertion seems to be broken
