@@ -102,7 +102,8 @@
           (concat comm " "
                   (file-name-nondirectory buffer-file-truename)
                   " -pedantic-errors -Wall -Wconversion -o "
-                  (file-name-sans-extension (file-name-nondirectory buffer-file-truename)))))))
+                  (file-name-sans-extension
+                   (file-name-nondirectory buffer-file-truename))))))
 
 (defun java-compile-command ()
   (make-local-variable 'compile-command)
@@ -125,6 +126,18 @@
     (if (file-exists-p c-file)
         (c-mode)
       (c++-mode))))
+
+;; Custom C style
+(defun my-c-style ()
+  "Load custom C style."
+  (c-set-style "stroustrup")
+  (c-set-offset 'inline-open '0)
+  (setq c-indent-comments-syntactically-p t
+        indent-tabs-mode nil
+        case-fold-search nil
+        c-recognize-knr-p nil
+        c-auto-newline nil))
+(add-hook 'c-mode-common-hook 'my-c-style)
 
 ;; Colorize compilation buffer
 (require 'ansi-color)
