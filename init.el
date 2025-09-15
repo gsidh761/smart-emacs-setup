@@ -28,25 +28,25 @@
 (global-set-key (kbd "C-M-r") 'recentf-open-files)
 
 ;; Compilation helpers
-(defun cplusplus-compile-command (comm)
-  (make-local-variable 'compile-command)
-  (if (or (file-exists-p "makefile")
-          (file-exists-p "Makefile"))
-      (setq compile-command "make -k all ")
-    (setq compile-command
-          (concat comm " "
-                  (file-name-nondirectory buffer-file-truename)
-                  " -pedantic-errors -Wall -Wconversion -o "
-                  (file-name-sans-extension
-                   (file-name-nondirectory buffer-file-truename))))))
+;; (defun cplusplus-compile-command (comm)
+;;   (make-local-variable 'compile-command)
+;;   (if (or (file-exists-p "makefile")
+;;           (file-exists-p "Makefile"))
+;;       (setq compile-command "make -k all ")
+;;     (setq compile-command
+;;           (concat comm " "
+;;                   (file-name-nondirectory buffer-file-truename)
+;;                   " -pedantic-errors -Wall -Wconversion -o "
+;;                   (file-name-sans-extension
+;;                    (file-name-nondirectory buffer-file-truename))))))
 
-(defun java-compile-command ()
-  (make-local-variable 'compile-command)
-  (setq compile-command (concat "javac " (file-name-nondirectory buffer-file-truename))))
+;; (defun java-compile-command ()
+;;   (make-local-variable 'compile-command)
+;;   (setq compile-command (concat "javac " (file-name-nondirectory buffer-file-truename))))
 
-(defun php-compile-command ()
-  (make-local-variable 'compile-command)
-  (setq compile-command (concat "php -l " (file-name-nondirectory buffer-file-truename))))
+;; (defun php-compile-command ()
+;;   (make-local-variable 'compile-command)
+;;   (setq compile-command (concat "php -l " (file-name-nondirectory buffer-file-truename))))
 
 ;; Package setup
 (require 'package)
