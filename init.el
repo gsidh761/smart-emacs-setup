@@ -2,11 +2,11 @@
 ;; Smart Emacs Setup (init.el)
 ;; ===============================
 
-;; Basic environment setup
-;; (setq inhibit-startup-message t
-;;       visible-bell t
-;;       tab-width 4
-;;       truncate-lines t)
+Basic environment setup
+(setq inhibit-startup-message t
+      visible-bell t
+      tab-width 4
+      truncate-lines t)
 
 (tooltip-mode -1)
 (menu-bar-mode -1)
@@ -48,16 +48,16 @@ Compilation helpers
   (make-local-variable 'compile-command)
   (setq compile-command (concat "php -l " (file-name-nondirectory buffer-file-truename))))
 
-;; Package setup
-(require 'package)
-(setq package-archives
-      '(("gnu"          . "https://elpa.gnu.org/packages/")
-        ("gnu-devel"    . "https://elpa.gnu.org/devel/")
-        ("nongnu"       . "https://elpa.nongnu.org/nongnu/")
-        ("melpa"        . "https://melpa.org/packages/")
-        ("melpa-stable" . "https://stable.melpa.org/packages/")
-        ("elpy"         . "http://jorgenschaefer.github.io/packages/")))
-(package-initialize)
+;; ;; Package setup
+;; (require 'package)
+;; (setq package-archives
+;;       '(("gnu"          . "https://elpa.gnu.org/packages/")
+;;         ("gnu-devel"    . "https://elpa.gnu.org/devel/")
+;;         ("nongnu"       . "https://elpa.nongnu.org/nongnu/")
+;;         ("melpa"        . "https://melpa.org/packages/")
+;;         ("melpa-stable" . "https://stable.melpa.org/packages/")
+;;         ("elpy"         . "http://jorgenschaefer.github.io/packages/")))
+;; (package-initialize)
 
 (require 'use-package)
 (setq use-package-always-ensure t)
