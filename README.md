@@ -3,7 +3,7 @@
 
 **Quick Start:**  
 ```
-wget https://raw.githubusercontent.com/gsidh761/smart-emacs-setup/refs/heads/main/setup.sh && chmod +x setup.sh && ./setup.sh
+curl https://raw.githubusercontent.com/gsidh761/smart-emacs-setup/refs/heads/main/setup.sh --output setup.sh && chmod +x setup.sh && ./setup.sh
 ```
 
 **Current Issues**
