@@ -114,11 +114,11 @@
 (require 'cpp-auto-include)
 
 
-(add-hook 'c++-mode-hook (lambda () (cplusplus-compile-command "g++")))
-(add-hook 'c-mode-hook  (lambda () (cplusplus-compile-command "gcc")))
-(add-hook 'asm-mode-hook (lambda () (cplusplus-compile-command "gcc")))
-(add-hook 'java-mode-hook 'java-compile-command)
-(add-hook 'php-mode-hook 'php-compile-command)
+;; (add-hook 'c++-mode-hook (lambda () (cplusplus-compile-command "g++")))
+;; (add-hook 'c-mode-hook  (lambda () (cplusplus-compile-command "gcc")))
+;; (add-hook 'asm-mode-hook (lambda () (cplusplus-compile-command "gcc")))
+;; (add-hook 'java-mode-hook 'java-compile-command)
+;; (add-hook 'php-mode-hook 'php-compile-command)
 
 ;; Detect .h files correctly
 (defun c-c++-header ()
