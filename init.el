@@ -118,17 +118,13 @@
 (add-hook 'java-mode-hook 'java-compile-command)
 (add-hook 'php-mode-hook 'php-compile-command)
 
-;; Custom C style
-(defun my-c-style ()
-  "Load custom C style."
-  (c-set-style "stroustrup")
-  (c-set-offset 'inline-open '0)
-  (setq c-indent-comments-syntactically-p t
-        indent-tabs-mode nil
-        case-fold-search nil
-        c-recognize-knr-p nil
-        c-auto-newline nil))
-(add-hook 'c-mode-common-hook 'my-c-style)
+;; Detect .h files correctly
+(defun c-c++-header ()
+  (interactive)
+  (let ((c-file (concat (substring (buffer-file-name) 0 -1) "c"))))
+    (if (file-exists-p c-file)
+        (c-mode)
+      (c++-mode))))
 
 ;; Colorize compilation buffer
 (require 'ansi-color)
