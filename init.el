@@ -3,10 +3,10 @@
 ;; ===============================
 
 ;; Basic environment setup
-(setq inhibit-startup-message t
-      visible-bell t
-      tab-width 4
-      truncate-lines t)
+;; (setq inhibit-startup-message t
+;;       visible-bell t
+;;       tab-width 4
+;;       truncate-lines t)
 
 (tooltip-mode -1)
 (menu-bar-mode -1)
@@ -27,26 +27,26 @@
 (global-set-key "\eOn" ".")
 (global-set-key (kbd "C-M-r") 'recentf-open-files)
 
-;; Compilation helpers
-;; (defun cplusplus-compile-command (comm)
-;;   (make-local-variable 'compile-command)
-;;   (if (or (file-exists-p "makefile")
-;;           (file-exists-p "Makefile"))
-;;       (setq compile-command "make -k all ")
-;;     (setq compile-command
-;;           (concat comm " "
-;;                   (file-name-nondirectory buffer-file-truename)
-;;                   " -pedantic-errors -Wall -Wconversion -o "
-;;                   (file-name-sans-extension
-;;                    (file-name-nondirectory buffer-file-truename))))))
+Compilation helpers
+(defun cplusplus-compile-command (comm)
+  (make-local-variable 'compile-command)
+  (if (or (file-exists-p "makefile")
+          (file-exists-p "Makefile"))
+      (setq compile-command "make -k all ")
+    (setq compile-command
+          (concat comm " "
+                  (file-name-nondirectory buffer-file-truename)
+                  " -pedantic-errors -Wall -Wconversion -o "
+                  (file-name-sans-extension
+                   (file-name-nondirectory buffer-file-truename))))))
 
-;; (defun java-compile-command ()
-;;   (make-local-variable 'compile-command)
-;;   (setq compile-command (concat "javac " (file-name-nondirectory buffer-file-truename))))
+(defun java-compile-command ()
+  (make-local-variable 'compile-command)
+  (setq compile-command (concat "javac " (file-name-nondirectory buffer-file-truename))))
 
-;; (defun php-compile-command ()
-;;   (make-local-variable 'compile-command)
-;;   (setq compile-command (concat "php -l " (file-name-nondirectory buffer-file-truename))))
+(defun php-compile-command ()
+  (make-local-variable 'compile-command)
+  (setq compile-command (concat "php -l " (file-name-nondirectory buffer-file-truename))))
 
 ;; Package setup
 (require 'package)
@@ -114,11 +114,11 @@
 (require 'cpp-auto-include)
 
 
-;; (add-hook 'c++-mode-hook (lambda () (cplusplus-compile-command "g++")))
-;; (add-hook 'c-mode-hook  (lambda () (cplusplus-compile-command "gcc")))
-;; (add-hook 'asm-mode-hook (lambda () (cplusplus-compile-command "gcc")))
-;; (add-hook 'java-mode-hook 'java-compile-command)
-;; (add-hook 'php-mode-hook 'php-compile-command)
+(add-hook 'c++-mode-hook (lambda () (cplusplus-compile-command "g++")))
+(add-hook 'c-mode-hook  (lambda () (cplusplus-compile-command "gcc")))
+(add-hook 'asm-mode-hook (lambda () (cplusplus-compile-command "gcc")))
+(add-hook 'java-mode-hook 'java-compile-command)
+(add-hook 'php-mode-hook 'php-compile-command)
 
 ;; Detect .h files correctly
 (defun c-c++-header ()
