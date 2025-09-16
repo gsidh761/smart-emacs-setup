@@ -1,5 +1,7 @@
 # Smart Emacs  
-### One-command install for auto-completion, header insertion, and productivity tweaks.  
+### One-command install for auto-completion, header insertion, and productivity tweaks. 
+
+### Note: Currently the init.el file causes an error with Emacs... 
 
 **Start/Update Guide:**  
 ```
