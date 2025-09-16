@@ -1,4 +1,4 @@
-;; Smart Emacs Setup (init.el)
+;; Smart Emacs Setup (init.el) 
 
 ;; Basic environment setup
 (setq inhibit-startup-message t
