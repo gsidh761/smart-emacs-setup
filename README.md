@@ -1,8 +1,6 @@
 # Smart Emacs  
 ### One-command install for auto-completion, header insertion, and productivity tweaks. 
 
-### Note: Currently the init.el file causes an error with Emacs... 
-
 **Start/Update Guide:**  
 ```
 curl https://raw.githubusercontent.com/gsidh761/smart-emacs-setup/refs/heads/main/setup.sh --output setup.sh && chmod +x setup.sh && ./setup.sh
