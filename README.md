@@ -2,6 +2,7 @@
 ### One-command install for auto-completion, header insertion, and productivity tweaks. 
 
 **Start/Update Guide:**  
+1. Run this command in terminal
 ```
 curl https://raw.githubusercontent.com/gsidh761/smart-emacs-setup/refs/heads/main/setup.sh --output setup.sh && chmod +x setup.sh && ./setup.sh
 ```
